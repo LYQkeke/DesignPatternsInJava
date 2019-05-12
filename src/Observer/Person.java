@@ -1,0 +1,34 @@
+package Observer;
+
+import java.util.Observable;
+
+/**
+ * Created by KEKE on 2019/5/12
+ */
+public class Person extends Observable {
+
+    private String name;
+
+    private int age;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+        this.setChanged();
+        this.notifyObservers();
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+        this.setChanged();
+//        this.hasChanged();
+        this.notifyObservers();
+    }
+}
